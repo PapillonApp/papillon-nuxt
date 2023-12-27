@@ -55,7 +55,7 @@
 
       <div class="ss-data" v-if="status === 'mid'">
         <div class="ss-nb ss-nb-mid"></div>
-        <p class="ss-nb-title">{{ allTotal - allWorking }} serveurs sont en panne</p>
+        <p class="ss-nb-title">{{ allTotal - allWorking }} {{ allTotal - allWorking > 1 ? 'serveurs sont' : 'serveur est' }} en panne</p>
       </div>
 
       <div class="ss-data" v-if="status === 'down'">

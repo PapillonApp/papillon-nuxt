@@ -3,5 +3,6 @@
     <IndexHeader />
     <IndexCompatibility />
     <IndexFeatures />
+    <IndexScreenshots />
   </div>
 </template>

@@ -57,7 +57,7 @@
 </template>
 <style scoped>
   .features {
-    background: #DCF3ED;
+    background: #FFFFFF;
   }
 
   .features-content {
