@@ -1,3 +1,41 @@
+<script setup>
+  import { ref, onMounted } from 'vue'
+
+  const status = ref('unknown')
+  const allWorking = ref(0)
+  const allTotal = ref(0)
+
+  onMounted(() => {
+    fetch('https://uptime-api.getpapillon.xyz/status')
+      .then(res => res.json())
+      .then(data => {
+        let working = 0;
+        let total = data.monitor_statuses.length;
+        
+        data.monitor_statuses.forEach((monitor) => {
+          if (monitor.status === "true") {
+            working++;
+          }
+        })
+
+        allWorking.value = working
+        allTotal.value = total
+
+        if (working === total) {
+          status.value = 'up'
+        } else if (working === 0) {
+          status.value = 'down'
+        } else {
+          status.value = 'mid'
+        }
+      })
+      .catch(err => {
+        console.error(err)
+        status.value = 'error'
+      })
+  })
+</script>
+
 <template>
   <div class="server-status">
     <div class="server-status-content width">
@@ -5,9 +43,29 @@
         Statut des serveurs
       </p>
 
-      <div class="ss-data">
+      <div class="ss-data" v-if="status === 'unknown'">
+        <div class="ss-nb ss-nb-unknown"></div>
+        <p class="ss-nb-title">Récupération du statut...</p>
+      </div>
+
+      <div class="ss-data" v-if="status === 'up'">
         <div class="ss-nb ss-nb-up"></div>
         <p class="ss-nb-title">Tout fonctionne normalement</p>
+      </div>
+
+      <div class="ss-data" v-if="status === 'mid'">
+        <div class="ss-nb ss-nb-mid"></div>
+        <p class="ss-nb-title">{{ allTotal - allWorking }} serveurs sont en panne</p>
+      </div>
+
+      <div class="ss-data" v-if="status === 'down'">
+        <div class="ss-nb ss-nb-down"></div>
+        <p class="ss-nb-title">Tous les serveurs sont en panne</p>
+      </div>
+
+      <div class="ss-data" v-if="status === 'error'">
+        <div class="ss-nb ss-nb-unknown"></div>
+        <p class="ss-nb-title">Impossible de récupérer le statut</p>
       </div>
 
       <div class="socials">
@@ -85,12 +143,20 @@
     animation: ss-nb-border-anim 1.25s infinite;
   }
 
+  .ss-nb-unknown {
+    background: #888888;
+  }
+
   .ss-nb-up {
     background: #0DFF8B;
   }
 
+  .ss-nb-mid {
+    background: #e6963a;
+  }
+
   .ss-nb-down {
-    background: #e66e3a;
+    background: #e64b3a;
   }
 
   .ss-nb-title {

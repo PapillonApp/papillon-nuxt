@@ -42,6 +42,7 @@
     height: 450px;
     color: #fff;
     position: relative;
+    overflow: hidden;
   }
 
   .index-header-content {
