@@ -25,11 +25,6 @@
     try {
       const decodedGrade = atob(gradeBase.value)
       grade.value = JSON.parse(decodedGrade)
-
-      // redirect to papillon://grade?= on mobile
-      if (process.client && navigator.userAgent.match(/(iPhone|iPod|iPad|Android|webOS|BlackBerry|IEMobile|Opera Mini)/i)) {
-        window.location.href = `papillon://grade?=${gradeBase.value}`
-      }
     } catch (e) {
       console.error(e)
       error.value = e
