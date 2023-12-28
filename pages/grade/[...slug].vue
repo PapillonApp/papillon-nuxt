@@ -21,6 +21,12 @@
   const grade = ref(null)
   const error = ref(null)
 
+  const canOpenInApp = process.client && navigator.userAgent.match(/(iPhone|iPod|iPad|Android|webOS|BlackBerry|IEMobile|Opera Mini)/i)
+
+  function openInApp() {
+    window.location.href = `papillon://grade?=${gradeBase.value}`
+  }
+
   onMounted(() => {
     try {
       const decodedGrade = atob(gradeBase.value)
@@ -61,6 +67,18 @@
           <a href="/">
             <img src="~/assets/img/papillon-icon.svg" alt="Logo Papillon" />
           </a>
+        </div>
+      </div>
+      <div
+        class="grade-button"
+        :style="{
+          backgroundColor: grade.color,
+        }"
+        v-if="canOpenInApp"
+        @click="openInApp"
+      >
+        <div class="grade-button-overlay">
+          <p>Ouvrir dans l'app</p>
         </div>
       </div>
       <div class="grade-content">
@@ -358,5 +376,42 @@
 
   .grade-data-student .grade-data-unit {
     font-size: 20px;
+  }
+
+  .grade-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .grade-button-overlay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 44px;
+    background-color: #00000050;
+  }
+
+  .grade-button-overlay:hover {
+    background-color: #00000070;
+  }
+
+  .grade-button-overlay:active {
+    background-color: #00000090;
+  }
+
+  .grade-button p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    user-select: none;
   }
 </style>
