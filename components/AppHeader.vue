@@ -5,16 +5,13 @@
 <template>
   <div class="app-header">
     <div class="app-header-content width">
-      <nuxt-link to="/" class="logo">
+      <a href="/" class="logo">
         <img src="~/assets/img/logo.svg" alt="Logo Papillon" />
-      </nuxt-link>
+      </a>
 
       <div class="app-header-content-nav">
         <nuxt-link to="/">
           Découvrir Papillon
-        </nuxt-link>
-        <nuxt-link to="/about">
-          A propos de nous
         </nuxt-link>
         <nuxt-link to="https://docs.getpapillon.xyz/">
           Documentation
