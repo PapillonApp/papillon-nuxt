@@ -39,34 +39,36 @@
 <template>
   <div class="server-status">
     <div class="server-status-content width">
-      <p class="ss-title">
-        Statut des serveurs
-      </p>
+      <a href="https://status.getpapillon.xyz/status/papillon/" class="server-status-ct">
+        <p class="ss-title">
+          Statut des serveurs
+        </p>
 
-      <div class="ss-data" v-if="status === 'unknown'">
-        <div class="ss-nb ss-nb-unknown"></div>
-        <p class="ss-nb-title">Récupération du statut...</p>
-      </div>
+        <div class="ss-data" v-if="status === 'unknown'">
+          <div class="ss-nb ss-nb-unknown"></div>
+          <p class="ss-nb-title">Récupération du statut...</p>
+        </div>
 
-      <div class="ss-data" v-if="status === 'up'">
-        <div class="ss-nb ss-nb-up"></div>
-        <p class="ss-nb-title">Tout fonctionne normalement</p>
-      </div>
+        <div class="ss-data" v-if="status === 'up'">
+          <div class="ss-nb ss-nb-up"></div>
+          <p class="ss-nb-title">Tout fonctionne normalement</p>
+        </div>
 
-      <div class="ss-data" v-if="status === 'mid'">
-        <div class="ss-nb ss-nb-mid"></div>
-        <p class="ss-nb-title">{{ allTotal - allWorking }} {{ allTotal - allWorking > 1 ? 'serveurs sont' : 'serveur est' }} en panne</p>
-      </div>
+        <div class="ss-data" v-if="status === 'mid'">
+          <div class="ss-nb ss-nb-mid"></div>
+          <p class="ss-nb-title">{{ allTotal - allWorking }} {{ allTotal - allWorking > 1 ? 'serveurs sont' : 'serveur est' }} en panne</p>
+        </div>
 
-      <div class="ss-data" v-if="status === 'down'">
-        <div class="ss-nb ss-nb-down"></div>
-        <p class="ss-nb-title">Tous les serveurs sont en panne</p>
-      </div>
+        <div class="ss-data" v-if="status === 'down'">
+          <div class="ss-nb ss-nb-down"></div>
+          <p class="ss-nb-title">Tous les serveurs sont en panne</p>
+        </div>
 
-      <div class="ss-data" v-if="status === 'error'">
-        <div class="ss-nb ss-nb-unknown"></div>
-        <p class="ss-nb-title">Impossible de récupérer le statut</p>
-      </div>
+        <div class="ss-data" v-if="status === 'error'">
+          <div class="ss-nb ss-nb-unknown"></div>
+          <p class="ss-nb-title">Impossible de récupérer le statut</p>
+        </div>
+      </a>
 
       <div class="socials">
         <a href="https://discord.com/invite/vFmCwSzvAp">
@@ -186,9 +188,33 @@
     opacity: 1;
   }
 
+  .server-status-ct {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .server-status-ct:hover {
+    background-color: #ffffff20;
+    padding: 7px 12px;
+    margin: -7px -12px;
+  }
+
   @media screen and (max-width: 768px) {
     .server-status {
+      height: 56px;
+    }
+
+    .ss-title {
       display: none;
+    }
+
+    .ss-data {
+      margin-left: 0;
+      gap: 16px;
     }
   }
 </style>

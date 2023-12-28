@@ -1,68 +1,113 @@
-
 <script setup>
-  import { Sparkles, Palette, Check, Shield } from 'lucide-vue-next'
+  import { Users, BookLock, LifeBuoy, Brain } from 'lucide-vue-next'
 </script>
+
 <template>
-  <div class="features">
+  <div class="reviews">
+    <div class="reviews-content width">
+      <div class="reviews-title">
+        <p class="reviews-main-title">
+          Créé par des élèves, pour des élèves
+        </p>
+        <p class="reviews-subtitle">
+          L’application est majoritairement développée par des lycéens sur leur temps libre, pour aider tous les élèves.
+        </p>
+      </div>
+    </div>
     <div class="features-content width">
       <div class="feature">
         <div class="feature-icon">
-          <Sparkles color="#29947a" />
+          <Users color="#29947a" />
         </div>
         <p class="feature-title">
-          Intuitif
+          Communautaire
         </p>
         <p class="feature-desc">
-          Papillon est facile et intuitif et cela dès la première ouverture. Pas de prise de tête !
+          La communauté de développeurs permet à Papillon d’évoluer
         </p>
       </div>
       <div class="feature-separator"></div>
       <div class="feature">
         <div class="feature-icon">
-          <Palette color="#29947a" />
+          <BookLock color="#29947a" />
         </div>
         <p class="feature-title">
-          Interface
+          Sécurisé
         </p>
         <p class="feature-desc">
-          Le design s’améliore continuellement pour créer une meilleure expérience.
+          Le code open-source permet d’assurer efficacement la sécurité de vos données scolaires
         </p>
       </div>
       <div class="feature-separator"></div>
       <div class="feature">
         <div class="feature-icon">
-          <Check color="#29947a" />
+          <LifeBuoy color="#29947a" />
         </div>
         <p class="feature-title">
-          Fonctionnalité
+          Assistance
         </p>
         <p class="feature-desc">
-          Toutes les fonctionnalités les plus attendues sont déjà disponibles dans Papillon !
+          Tout le monde peut participer à réparer des bugs et problèmes sur l’app
         </p>
       </div>
       <div class="feature-separator"></div>
       <div class="feature">
         <div class="feature-icon">
-          <Shield color="#29947a" />
+          <Brain color="#29947a" />
         </div>
         <p class="feature-title">
-          Vie privée
+          Apprendre
         </p>
         <p class="feature-desc">
-          Personne n’a accès à vos données scolaires et nous ne les conservons pas.
+          Participer à Papillon permet à tout le monde d’apprendre simplement le code
         </p>
       </div>
     </div>
   </div>
 </template>
+
 <style scoped>
-  .features {
-    background: #FFFFFF;
+  .reviews {
+    background: #DCF3ED;
+    color: #16302A;
+  }
+
+  .reviews-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 15px;
   }
 
   .features-content {
     display : flex;
     align-items: center;
+    padding-bottom: 25px;
+  }
+
+  .reviews-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .reviews-main-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .reviews-subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    opacity: 0.6;
   }
 
   .feature {
@@ -115,8 +160,6 @@
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       gap: 0px;
-      padding-top: 20px;
-      padding-bottom: 20px;
     }
 
     .feature {

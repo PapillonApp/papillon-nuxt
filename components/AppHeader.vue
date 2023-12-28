@@ -5,7 +5,9 @@
 <template>
   <div class="app-header">
     <div class="app-header-content width">
-      <img src="~/assets/img/logo.svg" alt="Logo Papillon" />
+      <nuxt-link to="/" class="logo">
+        <img src="~/assets/img/logo.svg" alt="Logo Papillon" />
+      </nuxt-link>
 
       <div class="app-header-content-nav">
         <nuxt-link to="/">
@@ -102,6 +104,10 @@
   .app-header-content-right .button:hover {
     background: #2A8B75;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.45);
+  }
+
+  .logo {
+    margin-top: 3.5px;
   }
 
   @media screen and (max-width: 1000px) {

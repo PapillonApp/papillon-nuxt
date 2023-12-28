@@ -7,6 +7,10 @@
     font-family: 'Onest', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --width: 1200px;
 }
@@ -26,4 +30,8 @@
     :root {
         --width: calc(100% - 40px);
     }
+}
+
+.app {
+    min-height: 100vh;
 }
