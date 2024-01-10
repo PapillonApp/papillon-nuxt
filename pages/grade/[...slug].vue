@@ -138,7 +138,7 @@
         </div>
         <div class="separator"></div>
         <div class="forcing">
-          <p>Mais malgré tout, on sait que c'est avec notre fameuse application Papillon que ton pote à réussi. <a href="/">Et pourquoi pas vous ?</a></p>
+          <p>Mais malgré tout, on sait que c'est avec notre fameuse application Papillon que ton pote a réussi. <a href="/">Et pourquoi pas vous ?</a></p>
         </div>
       </div>
     </div>
