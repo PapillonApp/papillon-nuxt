@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ServerStatus />
+    <!-- <ServerStatus /> -->
     <AppHeader />
     <slot />
     <AppFooter />

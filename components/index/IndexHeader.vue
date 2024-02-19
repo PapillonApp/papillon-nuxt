@@ -10,7 +10,7 @@
           Votre emploi du temps, votre agenda, vos notes, vos news et bien plus encore en un clin d’œil grâce à la nouvelle app Papillon.
         </p>
 
-        <div class="buttons">
+        <!-- <div class="buttons">
           <a href="https://apps.apple.com/fr/app/papillon-pour-pronote-ed/id1662669707" class="button button-primary">
             <img src="~/assets/img/app-store.svg" alt="App Store" />
             <span>App Store</span>
@@ -19,7 +19,9 @@
             <img src="~/assets/img/google-play.svg" alt="Google Play" />
             <span>Google Play</span>
           </a>
-        </div>
+        </div> -->
+
+        <DownloadButton />
 
         <div class="compatibility">
           <p>Compatible avec</p>
@@ -42,7 +44,6 @@
     height: 450px;
     color: #fff;
     position: relative;
-    overflow: hidden;
   }
 
   .index-header-content {

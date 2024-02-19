@@ -13,8 +13,11 @@
         <nuxt-link to="/">
           Découvrir Papillon
         </nuxt-link>
+        <nuxt-link to="https://support.getpapillon.xyz/">
+          Suppport
+        </nuxt-link>
         <nuxt-link to="https://docs.getpapillon.xyz/">
-          Documentation
+          Documentation technique
         </nuxt-link>
       </div>
 

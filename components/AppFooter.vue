@@ -10,8 +10,8 @@
       </div>
       <div class="footer-right">
         <p>
-          (C) 2024 The Papillon Company
-          et les développeurs contributeurs
+          (C) 2024 Logi 12 <br />
+          et tout les contributeurs
         </p>
       </div>
     </div>
