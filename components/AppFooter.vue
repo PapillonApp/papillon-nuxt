@@ -11,7 +11,7 @@
       <div class="footer-right">
         <p>
           (C) 2024 Logi 12 <br />
-          et tout les contributeurs
+          et tous les contributeurs
         </p>
       </div>
     </div>
