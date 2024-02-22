@@ -14,10 +14,13 @@
           Découvrir Papillon
         </nuxt-link>
         <nuxt-link to="https://support.getpapillon.xyz/">
-          Suppport
+          Assistance
         </nuxt-link>
         <nuxt-link to="https://docs.getpapillon.xyz/">
-          Documentation technique
+          Documentation
+        </nuxt-link>
+        <nuxt-link to="https://docs.getpapillon.xyz/development/intro/">
+          Développeurs
         </nuxt-link>
       </div>
 
