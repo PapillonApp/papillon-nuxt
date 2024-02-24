@@ -10,10 +10,10 @@
           <Sparkles color="#29947a" />
         </div>
         <p class="feature-title">
-          Intuitif
+          Intuitive
         </p>
         <p class="feature-desc">
-          Papillon est facile et intuitif et cela dès la première ouverture. Pas de prise de tête !
+          Papillon est facile et intuitive, et ce dès la première ouverture. Pas de prise de tête !
         </p>
       </div>
       <div class="feature-separator"></div>
@@ -49,7 +49,7 @@
           Vie privée
         </p>
         <p class="feature-desc">
-          Personne n’a accès à vos données scolaires et nous ne les conservons pas.
+          Personne n’a accès à vos données scolaires, afin de vous garantir la plus grande confidentialité.
         </p>
       </div>
     </div>
