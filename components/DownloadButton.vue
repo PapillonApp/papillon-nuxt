@@ -111,7 +111,7 @@ async function fetchLatestVersion() {
     "https://api.github.com/repos/PapillonApp/Papillon/releases/latest"
   );
   const data = await response.json();
-  version.value = "v" + data.tag_name;
+  version.value = "v" + (data.tag_name ? data.tag_name : "6");
 }
 </script>
 
